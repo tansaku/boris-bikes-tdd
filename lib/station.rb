@@ -17,7 +17,7 @@ class Station
 
 
 	def dock(bike)
-
+		raise "Station is full" if full?
 		@bikes << bike
 
 	end
