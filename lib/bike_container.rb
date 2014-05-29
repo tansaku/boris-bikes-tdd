@@ -5,8 +5,11 @@ module BikeContainer
   def bikes
 
     @bikes ||= []
+    @docked_bikes ||= 0
+    return @bikes
 
   end
+
 
   def capacity    
 
@@ -30,17 +33,19 @@ module BikeContainer
 
 
 
-  def dock(bike)
+  def dock(bike = nil)
 
-    raise "Station is full" if full?
-    bikes << bike
+    raise "Holder is full" if full?
+    bikes << bike if ((bike.is_a?Bike) && (!bikes.include?(bike)))
+    @docked_bikes = bikes.count
 
   end
 
 
-  def release(bike)
+  def release(bike = nil)
 
-    bikes.delete(bike)
+    bikes.delete(bike) if bikes.include?(bike)
+    @docked_bikes = bikes.count
 
   end
 
