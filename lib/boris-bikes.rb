@@ -5,7 +5,6 @@ require_relative 'garage.rb'
 require_relative 'person.rb'
 require_relative 'bike_container.rb'
 
-
 @bike = Bike.new
 @bike_1 = Bike.new
 @bike_2 = Bike.new
@@ -16,7 +15,7 @@ require_relative 'bike_container.rb'
 @bike_7 = Bike.new
 @bike_8 = Bike.new
 @bike_9 = Bike.new
-@bike_11 = Bike.new
+@bike_10 = Bike.new
 
 @station = Station.new
 @station_1 = Station.new
